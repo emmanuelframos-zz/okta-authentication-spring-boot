@@ -1,4 +1,4 @@
-package com.poc;
+package com.okta;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

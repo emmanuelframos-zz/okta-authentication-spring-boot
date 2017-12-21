@@ -1,0 +1,41 @@
+apply plugin: "java"
+apply plugin: "org.springframework.boot"
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE"
+    }
+}
+
+jar {
+   baseName = "okta-spring-boot-authentication"
+}
+
+dependencies {
+
+    /** Spring Boot Stack **/
+    def springBootVersion = "1.5.9.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}"){
+        exclude group: 'org.eclipse.jetty.websocket'
+    }
+    compile "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-logging:${springBootVersion}"
+
+    /** Okta **/
+    compile ('com.okta.spring:okta-spring-boot-starter:0.2.0'){
+        exclude group: 'org.slf4j'
+    }
+
+    /** Utils **/
+    compile 'org.projectlombok:lombok:1.16.10'
+    compile 'org.springframework.security.oauth:spring-security-oauth2:2.2.0.RELEASE'
+
+}

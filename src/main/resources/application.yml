@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+okta:
+  oauth2:
+    issuer: https://dev-811197.oktapreview.com/oauth2/default
+    clientId: 0oadd0ntommgf27iw0h7
+    clientSecret: v0zPVGXpPmks16Rj3MYJ-wx4k3K-r6oka0dZDdAs
+    sso:
+      loginPath: /login
